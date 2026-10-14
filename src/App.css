@@ -569,3 +569,9 @@ body {
 .hero-slide-arrow:hover,.hero-slide-arrow:focus-visible{background:rgba(12,35,65,.9)}
 .hero-slide-prev{left:14px}.hero-slide-next{right:14px}
 @media(max-width:768px){.hero .hero-carousel .slick-slide img{height:45vh}.hero-slide-arrow{width:34px;height:42px}.hero-slide-prev{left:6px}.hero-slide-next{right:6px}}
+
+/* Carrusel: imagen original completa, con bordes rellenados por copia difuminada. */
+.hero .hero-carousel .hero-slide{height:68vh;width:100%;position:relative;overflow:hidden;background:#234d80}
+.hero .hero-carousel .hero-slide-blur{position:absolute;inset:-24px;background-position:center;background-size:cover;background-repeat:no-repeat;filter:blur(22px) brightness(.78);transform:scale(1.04)}
+.hero .hero-carousel .slick-slide img.hero-slide-image{position:relative;z-index:1;width:100%;height:100%;max-height:68vh;object-fit:contain;display:block}
+@media(max-width:768px){.hero .hero-carousel .hero-slide{height:45vh}.hero .hero-carousel .slick-slide img.hero-slide-image{max-height:45vh}}
