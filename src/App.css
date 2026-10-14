@@ -549,3 +549,13 @@ body {
 .hero-overlay { pointer-events: none; }
 .hero .slick-dots { z-index: 3; bottom: 12px; }
 @media (max-width: 768px) { .hero .slick-slide img { height: 45vh; } }
+
+/* Submenús: desplazamiento horizontal real, sin cortar la primera ni última opción. */
+.custom-sub-tabs { width: 100%; max-width: 100%; min-width: 0; }
+.custom-sub-tabs > .ant-tabs-nav { width: 100%; max-width: 100%; margin: 0 0 18px; padding: 0 16px; box-sizing: border-box; overflow: hidden; }
+.custom-sub-tabs > .ant-tabs-nav .ant-tabs-nav-wrap { min-width: 0; max-width: 100%; overflow: hidden; }
+.custom-sub-tabs > .ant-tabs-nav .ant-tabs-nav-list { flex-wrap: nowrap; }
+.custom-sub-tabs > .ant-tabs-nav .ant-tabs-tab { flex: 0 0 auto; margin: 0 !important; padding: 12px 14px; white-space: nowrap; font-size: 14px; }
+.custom-sub-tabs > .ant-tabs-nav .ant-tabs-nav-operations { flex-shrink: 0; }
+.custom-sub-tabs > .ant-tabs-nav .ant-tabs-nav-more { display: inline-flex; align-items: center; min-width: 36px; justify-content: center; }
+@media (max-width: 768px) { .custom-sub-tabs > .ant-tabs-nav { padding: 0 8px; } .custom-sub-tabs > .ant-tabs-nav .ant-tabs-tab { font-size: 13px; padding: 11px 9px; } }
