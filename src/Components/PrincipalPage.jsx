@@ -32,7 +32,6 @@ const PrincipalPage = () => {
       </Carousel>
       <button type="button" className="hero-slide-arrow hero-slide-prev" aria-label="Imagen anterior" onClick={() => heroCarousel.current?.prev()}><LeftOutlined /></button>
       <button type="button" className="hero-slide-arrow hero-slide-next" aria-label="Imagen siguiente" onClick={() => heroCarousel.current?.next()}><RightOutlined /></button>
-      <div className="hero-overlay"><p className="hero-slogan">"Por una educación humana, creativa y pertinente a las necesidades de la región y del país en constante cambio" y un mundo abierto al conocimiento.</p></div>
     </div>
     <div className="oferta-section">
       <div className="oferta-titulo card-white">
