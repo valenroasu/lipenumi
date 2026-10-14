@@ -1,6 +1,4 @@
 import React from "react";
-import POBLACION_ESTUDIANTIL from "@docs/POBLACION_ESTUDIANTIL.docx";
-import logoDoc from "@assets/doc.png";
 import logoPdf from "@assets/PDF.png";
 import RESUMEN_MANUAL_CONVIVENCIA from "@assets/RESUMEN MANUAL DE CONVIVENCIA.pdf";
 import SISTEMA_EVALUACION from "@assets/SISTEMA INSTITUCIONAL DE EVALUACION LPNM.pdf";
@@ -8,7 +6,6 @@ import RUTA_ATENCION from "@assets/RUTA DE ATENCION INTEGRAL.pdf";
 import LICENCIA_FUNCIONAMIENTO from "@assets/Licencia Funcionamiento Resolucion 0081 del 21 enero -2021.pdf";
 
 const documents = [
-  { id: 1, name: "Población Estudiantil", url: POBLACION_ESTUDIANTIL, type: "docx", icon: logoDoc },
   { id: 2, name: "Resumen Manual de Convivencia", url: RESUMEN_MANUAL_CONVIVENCIA, type: "pdf", icon: logoPdf },
   { id: 3, name: "Sistema Institucional de Evaluación", url: SISTEMA_EVALUACION, type: "pdf", icon: logoPdf },
   { id: 4, name: "Ruta de Atención Integral", url: RUTA_ATENCION, type: "pdf", icon: logoPdf },
@@ -19,7 +16,9 @@ const Descargas = () => {
   const containerStyle = {
     maxWidth: "1200px",
     margin: "0 auto",
-    padding: "2rem",
+    padding: "2rem 1rem",
+    boxSizing: "border-box",
+    width: "100%",
     backgroundColor: "#f8f9fa",
     minHeight: "100vh",
   };
@@ -45,15 +44,20 @@ const Descargas = () => {
 
   const gridStyle = {
     display: "grid",
-    gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
-    gap: "2rem",
-    padding: "1rem",
+    gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 260px), 1fr))",
+    gap: "1.5rem",
+    padding: "0.5rem",
   };
 
   const cardStyle = {
     backgroundColor: "white",
     borderRadius: "15px",
-    padding: "2rem",
+    padding: "1.5rem",
+    minWidth: 0,
+    boxSizing: "border-box",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
     boxShadow: "0 10px 30px rgba(0,0,0,0.1)",
     transition: "all 0.3s ease",
     border: "1px solid #e9ecef",
@@ -110,6 +114,8 @@ const Descargas = () => {
     cursor: "pointer",
     transition: "all 0.3s ease",
     width: "100%",
+    boxSizing: "border-box",
+    minHeight: "48px",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
@@ -168,7 +174,8 @@ const Descargas = () => {
               style={{
                 ...downloadButtonStyle,
                 textDecoration: "none",
-                display: "block"
+                display: "flex",
+                marginTop: "auto"
               }}
               onMouseEnter={(e) => {
                 e.target.style.backgroundColor = downloadButtonHoverStyle.backgroundColor;
