@@ -1,6 +1,6 @@
 import React from "react";
 import { Carousel } from "antd";
-import { EnvironmentOutlined } from "@ant-design/icons";
+import { EnvironmentOutlined, LeftOutlined, RightOutlined } from "@ant-design/icons";
 import Colegio from "@assets/colegio.png";
 import Inscripciones from "@assets/INSCRIPCIONES.jpeg";
 import ISCE from "@assets/ISCE.png";
@@ -19,14 +19,18 @@ const noticias = [
   { imagen: ISCE, texto: "Este año seguimos alcanzando un Índice Sintético de Calidad superior al promedio nacional." },
 ];
 
-const PrincipalPage = () => (
+const PrincipalPage = () => {
+  const carouselRef = React.useRef(null);
+  return (
   <>
     <section className="hero" aria-label="Imágenes institucionales">
-      <Carousel autoplay autoplaySpeed={5500} dots effect="fade" aria-label="Galería de LIPENUMI">
+      <Carousel ref={carouselRef} autoplay autoplaySpeed={5500} dots effect="fade" aria-label="Galería de LIPENUMI">
         <div><img src={Colegio} alt="Instalaciones del Liceo Pedagógico Nuevo Milenio" fetchPriority="high" /></div>
         <div><img src={Inscripciones} alt="Información de inscripciones del colegio" /></div>
         <div><img src={ISCE} alt="Índice Sintético de Calidad Educativa" /></div>
       </Carousel>
+      <button type="button" className="hero-arrow hero-arrow-prev" aria-label="Imagen anterior" onClick={() => carouselRef.current?.prev()}><LeftOutlined /></button>
+      <button type="button" className="hero-arrow hero-arrow-next" aria-label="Imagen siguiente" onClick={() => carouselRef.current?.next()}><RightOutlined /></button>
       <div className="hero-overlay"><p className="hero-slogan">"Por una educación humana, creativa y pertinente a las necesidades de la región y del país en constante cambio" y un mundo abierto al conocimiento.</p></div>
     </section>
     <div className="oferta-section">
@@ -41,5 +45,6 @@ const PrincipalPage = () => (
     <div className="section-banner">Noticias</div>
     <div className="noticias-grid">{noticias.map((n,i)=><div className="noticia-card" key={i}><img src={n.imagen} alt={"noticia-"+(i+1)} loading="lazy"/><p>{n.texto}</p></div>)}</div>
   </>
-);
+  );
+};
 export default PrincipalPage;
