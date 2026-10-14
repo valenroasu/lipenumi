@@ -26,9 +26,9 @@ const PrincipalPage = () => {
   <>
     <div className="hero">
       <Carousel ref={heroCarousel} autoplay autoplaySpeed={5500} effect="fade" dots className="hero-carousel">
-        <div><img src={Colegio} alt="Liceo Pedagógico Nuevo Milenio" /></div>
-        <div><img src={Inscripciones} alt="Inscripciones y matrículas abiertas" /></div>
-        <div><img src={ISCE} alt="Índice Sintético de Calidad Educativa" /></div>
+        <div><div className="hero-slide"><div className="hero-slide-blur" style={{ backgroundImage: `url("${Colegio}")` }} aria-hidden="true" /><img className="hero-slide-image" src={Colegio} alt="Liceo Pedagógico Nuevo Milenio" /></div></div>
+        <div><div className="hero-slide"><div className="hero-slide-blur" style={{ backgroundImage: `url("${Inscripciones}")` }} aria-hidden="true" /><img className="hero-slide-image" src={Inscripciones} alt="Inscripciones y matrículas abiertas" /></div></div>
+        <div><div className="hero-slide"><div className="hero-slide-blur" style={{ backgroundImage: `url("${ISCE}")` }} aria-hidden="true" /><img className="hero-slide-image" src={ISCE} alt="Índice Sintético de Calidad Educativa" /></div></div>
       </Carousel>
       <button type="button" className="hero-slide-arrow hero-slide-prev" aria-label="Imagen anterior" onClick={() => heroCarousel.current?.prev()}><LeftOutlined /></button>
       <button type="button" className="hero-slide-arrow hero-slide-next" aria-label="Imagen siguiente" onClick={() => heroCarousel.current?.next()}><RightOutlined /></button>
