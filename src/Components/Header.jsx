@@ -7,7 +7,8 @@ const Header = () => {
       style={{
         display: "flex",
         width: "100%",
-        maxHeight: "10em",
+        maxHeight: "8.5em",
+        height: "8.5em",
         justifyContent: "space-between",
       }}
     >
@@ -28,7 +29,7 @@ const Header = () => {
           width: "85%",
           background:
             "linear-gradient(90deg, rgba(255,250,255,1) 0%, rgba(41,94,165,1) 30%, rgba(41,94,165,1) 70%, rgba(41,94,165,0) 100%",
-          padding: "1em",
+          padding: "0.6em",
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
