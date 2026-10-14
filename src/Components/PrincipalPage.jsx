@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useRef } from "react";
+import { Carousel } from "antd";
+import { LeftOutlined, RightOutlined } from "@ant-design/icons";
 import { EnvironmentOutlined } from "@ant-design/icons";
 import Colegio from "@assets/colegio.png";
 import Inscripciones from "@assets/INSCRIPCIONES.jpeg";
@@ -18,10 +20,18 @@ const noticias = [
   { imagen: ISCE, texto: "Este año seguimos alcanzando un Índice Sintético de Calidad superior al promedio nacional." },
 ];
 
-const PrincipalPage = () => (
+const PrincipalPage = () => {
+  const heroCarousel = useRef(null);
+  return (
   <>
     <div className="hero">
-      <img src={Colegio} alt="Liceo Pedagógico Nuevo Milenio" />
+      <Carousel ref={heroCarousel} autoplay autoplaySpeed={5500} effect="fade" dots className="hero-carousel">
+        <div><img src={Colegio} alt="Liceo Pedagógico Nuevo Milenio" /></div>
+        <div><img src={Inscripciones} alt="Inscripciones y matrículas abiertas" /></div>
+        <div><img src={ISCE} alt="Índice Sintético de Calidad Educativa" /></div>
+      </Carousel>
+      <button type="button" className="hero-slide-arrow hero-slide-prev" aria-label="Imagen anterior" onClick={() => heroCarousel.current?.prev()}><LeftOutlined /></button>
+      <button type="button" className="hero-slide-arrow hero-slide-next" aria-label="Imagen siguiente" onClick={() => heroCarousel.current?.next()}><RightOutlined /></button>
       <div className="hero-overlay"><p className="hero-slogan">"Por una educación humana, creativa y pertinente a las necesidades de la región y del país en constante cambio" y un mundo abierto al conocimiento.</p></div>
     </div>
     <div className="oferta-section">
@@ -36,5 +46,6 @@ const PrincipalPage = () => (
     <div className="section-banner">Noticias</div>
     <div className="noticias-grid">{noticias.map((n,i)=><div className="noticia-card" key={i}><img src={n.imagen} alt={"noticia-"+(i+1)} loading="lazy"/><p>{n.texto}</p></div>)}</div>
   </>
-);
+  );
+};
 export default PrincipalPage;
