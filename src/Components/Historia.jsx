@@ -4,6 +4,10 @@ import Colegio from "@assets/colegio.png";
 function Historia() {
   return (
     <>
+      <div className="section-banner historia-quote-below">
+        <span>“Para que cualquier cosa suceda, primero hay que hacer algo”</span>
+        <cite>— Albert Einstein</cite>
+      </div>
       <div className="historia-split">
         <div className="quote-card historia-intro-card"><h2>Un antes y un después...</h2>
         <p>Esta institución Educativa, nace como la prolongación de un proyecto de vida de su creadora Mg, Esp. Lic. Blanca Rubiela Junco, quien siempre soñó con un instrumento para guiar y educar a muchas generaciones, sobre la base del amor y las buenas costumbres, basado en el lema "Por una Educación Humanística, Creativa y Pertinente a las necesidades de la Región y del País en constante cambio". Recibe el nombre de Nuevo Milenio, porque inició labores en el año 2000, y Liceo porque en la antigua Grecia era el lugar en donde se reunían los grandes pensadores como Aristóteles a discutir, reflexionar y estudiar.</p>
@@ -13,10 +17,6 @@ function Historia() {
           <div className="titulo">Reseña Histórica</div>
           <img src={Colegio} alt="Fachada del colegio" loading="lazy" />
         </div>
-      </div>
-      <div className="section-banner historia-quote-below">
-        <span>“Para que cualquier cosa suceda, primero hay que hacer algo”</span>
-        <cite>— Albert Einstein</cite>
       </div>
 
       <div className="historia-texto card-white">
