@@ -5,22 +5,20 @@ function Historia() {
   return (
     <>
       <div className="historia-split">
-        <div className="historia-intro-card">Un antes y un después...</div>
+        <div className="quote-card historia-intro-card"><h2>Un antes y un después...</h2>
+        <p>Esta institución Educativa, nace como la prolongación de un proyecto de vida de su creadora Mg, Esp. Lic. Blanca Rubiela Junco, quien siempre soñó con un instrumento para guiar y educar a muchas generaciones, sobre la base del amor y las buenas costumbres, basado en el lema "Por una Educación Humanística, Creativa y Pertinente a las necesidades de la Región y del País en constante cambio". Recibe el nombre de Nuevo Milenio, porque inició labores en el año 2000, y Liceo porque en la antigua Grecia era el lugar en donde se reunían los grandes pensadores como Aristóteles a discutir, reflexionar y estudiar.</p>
+        <p>Primera directora y fundadora: Esp. Lic. Magíster en educación, Blanca Rubiela Junco Espinosa. El 90% de los exalumnos del Liceo Pedagógico Nuevo Milenio han tenido éxito académico, profesional, laboral y deportivo. El colegio inició con 47 estudiantes, hijos de 47 familias que creyeron en el proyecto educativo institucional y en su fundadora. En la trayectoria de 24 años de servicio se han alcanzado grandes metas de calidad gracias al compromiso vocacional de la directora, docentes, padres de familia y estudiantes.</p>
+        </div>
         <div className="historia-foto">
           <div className="titulo">Reseña Histórica</div>
           <img src={Colegio} alt="Fachada del colegio" loading="lazy" />
         </div>
       </div>
-      <div className="quote-card historia-quote-below">
-        <span className="comillas">"</span>
-        <blockquote>Para que cualquier cosa suceda, primero hay que hacer algo<span className="comillas comillas-cierre">”</span></blockquote>
+      <div className="section-banner historia-quote-below">
+        <span>“Para que cualquier cosa suceda, primero hay que hacer algo”</span>
         <cite>— Albert Einstein</cite>
       </div>
-      <div className="historia-texto card-white">
-        <p>Esta institución Educativa, nace como la prolongación de un proyecto de vida de su creadora Mg, Esp. Lic. Blanca Rubiela Junco, quien siempre soñó con un instrumento para guiar y educar a muchas generaciones, sobre la base del amor y las buenas costumbres, basado en el lema "Por una Educación Humanística, Creativa y Pertinente a las necesidades de la Región y del País en constante cambio". Recibe el nombre de Nuevo Milenio, porque inició labores en el año 2000, y Liceo porque en la antigua Grecia era el lugar en donde se reunían los grandes pensadores como Aristóteles a discutir, reflexionar y estudiar.</p>
-        <br />
-        <p>Primera directora y fundadora: Esp. Lic. Magíster en educación, Blanca Rubiela Junco Espinosa. El 90% de los exalumnos del Liceo Pedagógico Nuevo Milenio han tenido éxito académico, profesional, laboral y deportivo. El colegio inició con 47 estudiantes, hijos de 47 familias que creyeron en el proyecto educativo institucional y en su fundadora. En la trayectoria de 24 años de servicio se han alcanzado grandes metas de calidad gracias al compromiso vocacional de la directora, docentes, padres de familia y estudiantes.</p>
-      </div>
+
       <div className="historia-texto card-white">
         <h2>Reconocimientos y Logros</h2>
         <ul>
