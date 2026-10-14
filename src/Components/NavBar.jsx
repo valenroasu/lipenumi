@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import { Tabs } from "antd";
 import PrincipalPage from "./PrincipalPage";
 import InstitutionalHorizon from "./InstitutionalHorizon";
@@ -50,13 +50,6 @@ const dependenciaGrid = (imagenes) => (
 
 const NavBar = () => {
   const [activeTab, setActiveTab] = useState("1");
-  const [governmentTab, setGovernmentTab] = useState("3-1");
-  const governmentScrollRef = useRef(null);
-  const governmentOptions = [
-    ["3-1", "Consejo Directivo"], ["3-2", "Consejo Académico"],
-    ["3-3", "Consejo Estudiantes"], ["3-4", "Comité de convivencia Escolar"],
-    ["3-5", "Comité de evaluación y promoción"], ["3-6", "Asociación de Padres de familia"]
-  ];
 
   // Mapeo de rutas a claves de pestañas
   const routeToKey = {
@@ -88,7 +81,7 @@ const NavBar = () => {
       break;
     case "2":
       content = (
-        <Tabs defaultActiveKey="2-1" centered={false} tabPosition="top" tabBarGutter={12} className="custom-sub-tabs">
+        <Tabs defaultActiveKey="2-1" centered className="custom-sub-tabs">
           <TabPane tab="Estudiantes" key="2-1">
             <Estudiantes />
           </TabPane>
@@ -112,30 +105,31 @@ const NavBar = () => {
       break;
     case "3":
       content = (
-        <div className="government-tabs">
-          <nav className="government-nav" aria-label="Secciones de gobierno escolar">
-            <button type="button" className="government-arrow" aria-label="Desplazar pestañas a la izquierda" onClick={() => governmentScrollRef.current?.scrollBy({ left: -320, behavior: "smooth" })}>‹</button>
-            <div className="government-tab-list" ref={governmentScrollRef}>
-              {governmentOptions.map(([key, label]) => (
-                <button key={key} type="button" className={governmentTab === key ? "government-tab active" : "government-tab"} onClick={(event) => { setGovernmentTab(key); event.currentTarget.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "nearest" }); }} aria-current={governmentTab === key ? "page" : undefined}>{label}</button>
-              ))}
-            </div>
-            <button type="button" className="government-arrow" aria-label="Desplazar pestañas a la derecha" onClick={() => governmentScrollRef.current?.scrollBy({ left: 320, behavior: "smooth" })}>›</button>
-          </nav>
-          <div className="government-content">
-            {governmentTab === "3-1" && <ConsejoDirectivo />}
-            {governmentTab === "3-2" && <ConsejoAcademico2 />}
-            {governmentTab === "3-3" && <ConsejoEstudiantes />}
-            {governmentTab === "3-4" && <ComiteConvivencia />}
-            {governmentTab === "3-5" && <ComiteEvaluacion />}
-            {governmentTab === "3-6" && <AsociacionPadres />}
-          </div>
-        </div>
+        <Tabs defaultActiveKey="3-1" centered className="custom-sub-tabs">
+          <TabPane tab="Consejo Directivo" key="3-1">
+            <ConsejoDirectivo />
+          </TabPane>
+          <TabPane tab="Consejo Académico" key="3-2">
+            <ConsejoAcademico2 />
+          </TabPane>
+          <TabPane tab="Consejo Estudiantes" key="3-3">
+            <ConsejoEstudiantes />
+          </TabPane>
+          <TabPane tab="Comité de convivencia Escolar" key="3-4">
+            <ComiteConvivencia />
+          </TabPane>
+          <TabPane tab="Comité de evaluación y promoción" key="3-5">
+            <ComiteEvaluacion />
+          </TabPane>
+          <TabPane tab="Asociación de Padres de familia" key="3-6">
+            <AsociacionPadres />
+          </TabPane>
+        </Tabs>
       );
       break;
     case "4":
       content = (
-        <Tabs defaultActiveKey="4-1" centered={false} tabPosition="top" tabBarGutter={12} className="custom-sub-tabs">
+        <Tabs defaultActiveKey="4-1" centered className="custom-sub-tabs">
           <TabPane tab="Consejo Académico" key="4-1">
             <ConsejoAcademico />
           </TabPane>
@@ -150,7 +144,7 @@ const NavBar = () => {
       break;
     case "5":
       content = (
-        <Tabs defaultActiveKey="5-1" centered={false} tabPosition="top" tabBarGutter={12} className="custom-sub-tabs">
+        <Tabs defaultActiveKey="5-1" centered className="custom-sub-tabs">
           <TabPane tab="Dirección" key="5-1">
             {dependenciaGrid(direccionImgs)}
           </TabPane>
@@ -177,7 +171,7 @@ const NavBar = () => {
       break;
     case "8":
       content = (
-        <Tabs defaultActiveKey="8-1" centered={false} tabPosition="top" tabBarGutter={12} className="custom-sub-tabs">
+        <Tabs defaultActiveKey="8-1" centered className="custom-sub-tabs">
           <TabPane tab="General" key="8-1">
             <Inscripcion />
           </TabPane>
