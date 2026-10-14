@@ -587,6 +587,9 @@ body {
 /* Comilla de cierre de la cita histórica. */
 .quote-card .comillas-cierre{display:inline;font-size:1.15em;line-height:0;margin-left:.15em;vertical-align:baseline}
 
-/* Historia: intercambiar posición de la frase y el título introductorio. */
-.historia-intro-card{background:var(--azul-oscuro);color:#fff;border-radius:var(--radio);box-shadow:var(--sombra);display:flex;align-items:center;justify-content:center;text-align:center;padding:2rem;font-size:clamp(1.15rem,2vw,1.7rem);font-weight:700;letter-spacing:.08em;text-transform:uppercase;box-sizing:border-box}
-.historia-quote-below{width:min(1100px,92%);margin:0 auto 2em;box-sizing:border-box;min-height:170px}
+/* Historia: relato en la tarjeta blanca original y cita en la franja azul. */
+.historia-intro-card{display:flex;flex-direction:column;justify-content:center;align-items:stretch;text-align:justify;gap:.9rem;min-width:0}
+.historia-intro-card h2{text-align:center;color:var(--azul-oscuro);font-size:clamp(1.1rem,1.8vw,1.45rem);text-transform:uppercase;margin:0 0 .4rem}
+.historia-intro-card p{font-size:.94rem;line-height:1.75;margin:0;overflow-wrap:break-word}
+.historia-quote-below{width:min(1100px,92%);margin:0 auto 2em;box-sizing:border-box;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.55rem;padding:1.4rem 1.5rem;text-align:center;font-size:clamp(1rem,1.7vw,1.35rem);font-weight:700}
+.historia-quote-below cite{font-size:.8em;font-weight:400;font-style:normal;opacity:.9}
