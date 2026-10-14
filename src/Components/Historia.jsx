@@ -1,5 +1,5 @@
 import React from "react";
-import Colegio from "@assets/colegioconfade.png";
+import Colegio from "@assets/colegio.png";
 
 function Historia() {
   return (
@@ -7,7 +7,7 @@ function Historia() {
       <div className="historia-split">
         <div className="quote-card">
           <span className="comillas">"</span>
-          <blockquote>Para que cualquier cosa suceda, primero hay que hacer algo</blockquote>
+          <blockquote>Para que cualquier cosa suceda, primero hay que hacer algo<span className="comillas comillas-cierre">”</span></blockquote>
           <cite>— Albert Einstein</cite>
         </div>
         <div className="historia-foto">
