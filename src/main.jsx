@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import App from './App.jsx'
+import Horarios from './Components/Horarios.jsx'
 import AdminContainer from './Components/AdminContainer.jsx'
 import CreateAdmin from './Components/CreateAdmin.jsx'
 import TestFirebase from './Components/TestFirebase.jsx'
@@ -12,6 +13,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Router>
       <Routes>
+        <Route path="/horarios" element={<Horarios />} />
         <Route path="/admin" element={<AdminContainer />} />
         <Route path="/gestion" element={<AdminContainer />} />
         <Route path="/panel" element={<AdminContainer />} />
