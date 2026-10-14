@@ -70,11 +70,13 @@
         >
           {hoveredPreescolar ? "Preescolar" : null}
         </Button>
-        <div>
+        <div style={{ position: "fixed", bottom: 115, right: 24, width: 167, zIndex: 20 }}>
           <h2 style={{
-            position: "fixed",
-            bottom: 165,
-            right: 24,
+            position: "relative",
+            boxSizing: "border-box",
+            width: "100%",
+            margin: 0,
+            whiteSpace: "nowrap",
             cursor: "pointer",
             color: "#000",
             fontStretch: "ultra-condensed",
@@ -94,9 +96,8 @@
               width: "167px",
               height: "50px",
               borderRadius: "0 0 10px 10px ",
-              position: "fixed",
-              bottom: 115,
-              right: 24,
+              display: "block",
+              position: "relative",
               cursor: "pointer",
             }}
           />
