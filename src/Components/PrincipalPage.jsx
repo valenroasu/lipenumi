@@ -1,50 +1,96 @@
 import React from "react";
 import { Carousel } from "antd";
-import { EnvironmentOutlined, LeftOutlined, RightOutlined } from "@ant-design/icons";
-import Colegio from "@assets/colegio.png";
+import { LeftOutlined, RightOutlined } from "@ant-design/icons";
 import Inscripciones from "@assets/INSCRIPCIONES.jpeg";
 import ISCE from "@assets/ISCE.png";
-import Estudiantes1 from "@assets/estudiantes1.jpg";
+import Colegio from "@assets/colegio.png";
+import Inscripcion from "./Inscripcion";
+import ProcesoInscripcion from "./ProcesoInscripcion";
+import Requerimientos from "./Requerimientos";
 
-const infoCards = [
-  { titulo: "Portafolios y capacitación", texto: "Contamos con profesores capacitados y comprometidos con la educación del último milenio." },
-  { titulo: "Educación inclusiva", texto: "Acompañamiento y orientación para todos nuestros estudiantes." },
-  { titulo: "Convenio Santillana", texto: "Material y plataformas educativas de apoyo al aprendizaje." },
-  { titulo: "Deporte y cultura", texto: "Intercolegiados, proyectos maker y actividades para toda la familia." },
-];
+const contentStyle = {
+  height: window.innerWidth <= 600 ? "25vh" : "70vh",
+  width: window.innerWidth <= 600 ? "100%" : "80%",
+  margin: "auto",
+  background: "#364d79",
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+};
 
-const noticias = [
-  { imagen: Inscripciones, texto: "¡Inscripciones y matrículas abiertas! Conoce nuestra oferta y únete a la familia milenista." },
-  { imagen: Estudiantes1, texto: "El Liceo Pedagógico Nuevo Milenio ofrece cupos especiales para niños no alfabetizados." },
-  { imagen: ISCE, texto: "Este año seguimos alcanzando un Índice Sintético de Calidad superior al promedio nacional." },
-];
+const arrowStyle = {
+  position: "absolute",
+  top: "50%",
+  transform: "translateY(-50%)",
+  fontSize: "40px",
+  color: "#000",
+  zIndex: 1,
+  cursor: "pointer",
+};
 
 const PrincipalPage = () => {
-  const carouselRef = React.useRef(null);
+  const carouselRef = React.useRef();
+
+  const nextSlide = () => {
+    carouselRef.current.next();
+  };
+
+  const prevSlide = () => {
+    carouselRef.current.prev();
+  };
+
   return (
-  <>
-    <section className="hero" aria-label="Imágenes institucionales">
-      <Carousel ref={carouselRef} autoplay autoplaySpeed={5500} dots effect="fade" aria-label="Galería de LIPENUMI">
-        <div><img src={Colegio} alt="Instalaciones del Liceo Pedagógico Nuevo Milenio" fetchPriority="high" /></div>
-        <div><img src={Inscripciones} alt="Información de inscripciones del colegio" /></div>
-        <div><img src={ISCE} alt="Índice Sintético de Calidad Educativa" /></div>
-      </Carousel>
-      <button type="button" className="hero-arrow hero-arrow-prev" aria-label="Imagen anterior" onClick={() => carouselRef.current?.prev()}><LeftOutlined /></button>
-      <button type="button" className="hero-arrow hero-arrow-next" aria-label="Imagen siguiente" onClick={() => carouselRef.current?.next()}><RightOutlined /></button>
-      <div className="hero-overlay"><p className="hero-slogan">"Por una educación humana, creativa y pertinente a las necesidades de la región y del país en constante cambio" y un mundo abierto al conocimiento.</p></div>
-    </section>
-    <div className="oferta-section">
-      <div className="oferta-titulo card-white">
-        <h2>Conoce nuestra oferta académica</h2>
-        <ul><li>Pre-escolar</li><li>Básica Primaria</li><li>Básica Media</li><li>Bachillerato</li></ul>
+    <>
+      <div style={{ position: "relative", textAlign: "center" }}>
+        <LeftOutlined
+          style={{ ...arrowStyle, left: "10px" }}
+          onClick={prevSlide}
+        />
+        <RightOutlined
+          style={{ ...arrowStyle, right: "10px" }}
+          onClick={nextSlide}
+        />
+
+        <Carousel effect="fade" autoplay ref={carouselRef}>
+          <div>
+            <img src={Colegio} style={contentStyle} alt="Colegio" />
+          </div>
+          <div>
+            <img src={Inscripciones} style={contentStyle} alt="INSCRIPCIONES" />
+          </div>
+          <div>
+            <img src={ISCE} style={contentStyle} alt="ISCE" />
+          </div>
+        </Carousel>
+
+        <div style={{ marginTop: "40px" }}>
+          <h2
+            style={{
+              fontSize: "35px",
+              fontWeight: "bold",
+              marginBottom: "20px",
+            }}
+          >
+            Cómo llegar
+          </h2>
+        </div>
       </div>
-      <div className="mini-cards">{infoCards.map((card,i)=><div className="mini-card" key={i}><h4>{card.titulo}</h4><p>{card.texto}</p></div>)}</div>
-    </div>
-    <div className="como-llegar-banner"><EnvironmentOutlined /> Cómo llegar</div>
-    <iframe title="Google Maps" width="92%" height="400" style={{border:"0",borderRadius:"14px",boxShadow:"0 4px 14px rgba(20, 51, 95, 0.12)",maxWidth:"1100px"}} loading="lazy" allowFullScreen referrerPolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1645.428591513316!2d-74.19943624568032!3d11.223787222318789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8ef4f5999d45d42b%3A0xdb4ad7e36cd63d90!2sLiceo%20Pedag%C3%B3gico%20Nuevo%20Milenio!5e0!3m2!1ses!2sco!4v1742405762305!5m2!1ses!2sco"></iframe>
-    <div className="section-banner">Noticias</div>
-    <div className="noticias-grid">{noticias.map((n,i)=><div className="noticia-card" key={i}><img src={n.imagen} alt={"noticia-"+(i+1)} loading="lazy"/><p>{n.texto}</p></div>)}</div>
-  </>
+      <iframe
+        title="Google Maps"
+        width="80%"
+        height="400"
+        style={{
+          border: "0",
+          borderRadius: "10px",
+          boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
+        }}
+        loading="lazy"
+        allowFullScreen
+        referrerPolicy="no-referrer-when-downgrade"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1645.428591513316!2d-74.19943624568032!3d11.223787222318789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8ef4f5999d45d42b%3A0xdb4ad7e36cd63d90!2sLiceo%20Pedag%C3%B3gico%20Nuevo%20Milenio!5e0!3m2!1ses!2sco!4v1742405762305!5m2!1ses!2sco"
+      ></iframe>
+    </>
   );
 };
+
 export default PrincipalPage;
