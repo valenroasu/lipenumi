@@ -583,3 +583,6 @@ body {
 .simbolo-card ul{padding-left:1.4rem;list-style-position:outside}
 .simbolo-card li{padding-left:.25rem;margin-bottom:.4rem}
 @media(max-width:768px){.simbolos-grid{padding-inline:8px}.simbolo-card{padding:1.5rem 1.3rem}}
+
+/* Comilla de cierre de la cita histórica. */
+.quote-card .comillas-cierre{display:inline;font-size:1.15em;line-height:0;margin-left:.15em;vertical-align:baseline}
