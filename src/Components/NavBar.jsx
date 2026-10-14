@@ -35,7 +35,7 @@ const informaticaImgs = Object.values(import.meta.glob('../assets/DEPENDENCIAS/I
 const psicoorientacionImgs = Object.values(import.meta.glob('../assets/DEPENDENCIAS/PSICOORIENTACION/*', { eager: true, as: 'url' }));
 
 const dependenciaGrid = (imagenes) => (
-  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, minmax(320px, 1fr))', gap: '24px', margin: '2em 0', padding: '0 4em' }}>
+  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: '24px', margin: '2em 0', padding: '0 2em' }}>
     {imagenes.map((src, idx) => (
       <div key={idx} style={{ border: '1px solid #eee', borderRadius: '12px', overflow: 'hidden', background: '#fafafa', boxShadow: '0 2px 8px rgba(0,0,0,0.07)' }}>
         <img
@@ -69,6 +69,11 @@ const NavBar = () => {
     const path = window.location.pathname;
     setActiveTab(routeToKey[path] || "1"); // Si no coincide, usa "1" por defecto
   }, []);
+
+  const scrollGovernmentTabs = (event) => {
+    const track = event.currentTarget.querySelector(".ant-tabs-nav-wrap");
+    if (track) track.scrollLeft += event.deltaY + event.deltaX;
+  };
 
   const onChange = (key) => {
     setActiveTab(key);
@@ -105,7 +110,8 @@ const NavBar = () => {
       break;
     case "3":
       content = (
-        <Tabs defaultActiveKey="3-1" centered className="custom-sub-tabs">
+        <div className="government-scroll-area" onWheel={scrollGovernmentTabs}>
+        <Tabs defaultActiveKey="3-1" className="custom-sub-tabs government-sub-tabs">
           <TabPane tab="Consejo Directivo" key="3-1">
             <ConsejoDirectivo />
           </TabPane>
@@ -125,6 +131,7 @@ const NavBar = () => {
             <AsociacionPadres />
           </TabPane>
         </Tabs>
+        </div>
       );
       break;
     case "4":
