@@ -1,7 +1,8 @@
 import React from "react";
+import { Carousel } from "antd";
 import { EnvironmentOutlined } from "@ant-design/icons";
 import Colegio from "@assets/colegio.png";
-import Inscripciones from "@assets/INSCRIPCIONES.png";
+import Inscripciones from "@assets/INSCRIPCIONES.jpeg";
 import ISCE from "@assets/ISCE.png";
 import Estudiantes1 from "@assets/estudiantes1.jpg";
 
@@ -20,10 +21,14 @@ const noticias = [
 
 const PrincipalPage = () => (
   <>
-    <div className="hero">
-      <img src={Colegio} alt="Liceo Pedagógico Nuevo Milenio" />
+    <section className="hero" aria-label="Imágenes institucionales">
+      <Carousel autoplay autoplaySpeed={5500} dots effect="fade" aria-label="Galería de LIPENUMI">
+        <div><img src={Colegio} alt="Instalaciones del Liceo Pedagógico Nuevo Milenio" fetchPriority="high" /></div>
+        <div><img src={Inscripciones} alt="Información de inscripciones del colegio" /></div>
+        <div><img src={ISCE} alt="Índice Sintético de Calidad Educativa" /></div>
+      </Carousel>
       <div className="hero-overlay"><p className="hero-slogan">"Por una educación humana, creativa y pertinente a las necesidades de la región y del país en constante cambio" y un mundo abierto al conocimiento.</p></div>
-    </div>
+    </section>
     <div className="oferta-section">
       <div className="oferta-titulo card-white">
         <h2>Conoce nuestra oferta académica</h2>
