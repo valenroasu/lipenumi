@@ -5,17 +5,17 @@ function Historia() {
   return (
     <>
       <div className="historia-split">
-        <div className="quote-card">
-          <span className="comillas">"</span>
-          <blockquote>Para que cualquier cosa suceda, primero hay que hacer algo<span className="comillas comillas-cierre">”</span></blockquote>
-          <cite>— Albert Einstein</cite>
-        </div>
+        <div className="historia-intro-card">Un antes y un después...</div>
         <div className="historia-foto">
           <div className="titulo">Reseña Histórica</div>
           <img src={Colegio} alt="Fachada del colegio" loading="lazy" />
         </div>
       </div>
-      <div className="section-banner">Un antes y un después...</div>
+      <div className="quote-card historia-quote-below">
+        <span className="comillas">"</span>
+        <blockquote>Para que cualquier cosa suceda, primero hay que hacer algo<span className="comillas comillas-cierre">”</span></blockquote>
+        <cite>— Albert Einstein</cite>
+      </div>
       <div className="historia-texto card-white">
         <p>Esta institución Educativa, nace como la prolongación de un proyecto de vida de su creadora Mg, Esp. Lic. Blanca Rubiela Junco, quien siempre soñó con un instrumento para guiar y educar a muchas generaciones, sobre la base del amor y las buenas costumbres, basado en el lema "Por una Educación Humanística, Creativa y Pertinente a las necesidades de la Región y del País en constante cambio". Recibe el nombre de Nuevo Milenio, porque inició labores en el año 2000, y Liceo porque en la antigua Grecia era el lugar en donde se reunían los grandes pensadores como Aristóteles a discutir, reflexionar y estudiar.</p>
         <br />
