@@ -559,3 +559,20 @@ body {
 .custom-sub-tabs > .ant-tabs-nav .ant-tabs-nav-operations { flex-shrink: 0; }
 .custom-sub-tabs > .ant-tabs-nav .ant-tabs-nav-more { display: inline-flex; align-items: center; min-width: 36px; justify-content: center; }
 @media (max-width: 768px) { .custom-sub-tabs > .ant-tabs-nav { padding: 0 8px; } .custom-sub-tabs > .ant-tabs-nav .ant-tabs-tab { font-size: 13px; padding: 11px 9px; } }
+
+/* Gobierno escolar: botones visibles en ambos sentidos y desplazamiento nativo. */
+.government-tabs{width:100%;min-width:0}
+.government-nav{display:flex;align-items:stretch;width:100%;max-width:100%;background:#f0f4f9;border-bottom:1px solid #dce5f0}
+.government-tab-list{display:flex;align-items:stretch;gap:12px;flex:1;min-width:0;overflow-x:auto;scroll-behavior:smooth;scrollbar-width:thin;overscroll-behavior-x:contain}
+.government-tab{appearance:none;flex:0 0 auto;border:0;border-bottom:3px solid transparent;background:transparent;color:#202b3a;font:inherit;font-size:14px;font-weight:600;padding:16px 18px;cursor:pointer;white-space:nowrap}
+.government-tab.active{border-bottom-color:#1677ff;color:#1677ff}
+.government-tab:hover,.government-tab:focus-visible{color:#1677ff;background:#e3ebf6}
+.government-arrow{appearance:none;flex:0 0 44px;border:0;background:#295ea5;color:white;font-size:29px;cursor:pointer;z-index:2}
+.government-arrow:hover,.government-arrow:focus-visible{background:#174579}
+.government-content{padding-top:18px}
+/* Fotos enteras, sin recortar bordes; controles por encima del texto decorativo. */
+.hero .slick-slide img{object-fit:contain!important;object-position:center;background:#173b69}
+.hero-arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:5;width:46px;height:52px;display:flex;align-items:center;justify-content:center;border:0;border-radius:10px;background:rgba(13,37,73,.78);color:white;font-size:24px;cursor:pointer;transition:background .2s}
+.hero-arrow:hover,.hero-arrow:focus-visible{background:#295ea5}
+.hero-arrow-prev{left:14px}.hero-arrow-next{right:14px}
+@media(max-width:600px){.government-arrow{flex-basis:36px}.government-tab{padding:13px 12px;font-size:13px}.hero-arrow{width:36px;height:42px;font-size:18px}.hero-arrow-prev{left:5px}.hero-arrow-next{right:5px}}
