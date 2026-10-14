@@ -81,7 +81,7 @@ const NavBar = () => {
       break;
     case "2":
       content = (
-        <Tabs defaultActiveKey="2-1" centered className="custom-sub-tabs">
+        <Tabs defaultActiveKey="2-1" centered={false} tabPosition="top" tabBarGutter={12} className="custom-sub-tabs">
           <TabPane tab="Estudiantes" key="2-1">
             <Estudiantes />
           </TabPane>
@@ -105,7 +105,7 @@ const NavBar = () => {
       break;
     case "3":
       content = (
-        <Tabs defaultActiveKey="3-1" centered className="custom-sub-tabs">
+        <Tabs defaultActiveKey="3-1" centered={false} tabPosition="top" tabBarGutter={12} className="custom-sub-tabs">
           <TabPane tab="Consejo Directivo" key="3-1">
             <ConsejoDirectivo />
           </TabPane>
@@ -129,7 +129,7 @@ const NavBar = () => {
       break;
     case "4":
       content = (
-        <Tabs defaultActiveKey="4-1" centered className="custom-sub-tabs">
+        <Tabs defaultActiveKey="4-1" centered={false} tabPosition="top" tabBarGutter={12} className="custom-sub-tabs">
           <TabPane tab="Consejo Académico" key="4-1">
             <ConsejoAcademico />
           </TabPane>
@@ -144,7 +144,7 @@ const NavBar = () => {
       break;
     case "5":
       content = (
-        <Tabs defaultActiveKey="5-1" centered className="custom-sub-tabs">
+        <Tabs defaultActiveKey="5-1" centered={false} tabPosition="top" tabBarGutter={12} className="custom-sub-tabs">
           <TabPane tab="Dirección" key="5-1">
             {dependenciaGrid(direccionImgs)}
           </TabPane>
@@ -171,7 +171,7 @@ const NavBar = () => {
       break;
     case "8":
       content = (
-        <Tabs defaultActiveKey="8-1" centered className="custom-sub-tabs">
+        <Tabs defaultActiveKey="8-1" centered={false} tabPosition="top" tabBarGutter={12} className="custom-sub-tabs">
           <TabPane tab="General" key="8-1">
             <Inscripcion />
           </TabPane>
