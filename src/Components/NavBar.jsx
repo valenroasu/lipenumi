@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Tabs } from "antd";
 import PrincipalPage from "./PrincipalPage";
 import InstitutionalHorizon from "./InstitutionalHorizon";
@@ -48,6 +48,31 @@ const dependenciaGrid = (imagenes) => (
   </div>
 );
 
+
+// Desplazamiento táctil bidireccional independiente del movimiento interno de Ant Design.
+const SwipeTabs = ({ children, ...props }) => {
+  const containerRef = useRef(null);
+  const gesture = useRef(null);
+  const onTouchStart = (event) => {
+    const wrap = containerRef.current?.querySelector(".ant-tabs-nav-wrap");
+    if (!wrap || event.touches.length !== 1) return;
+    gesture.current = { x: event.touches[0].clientX, y: event.touches[0].clientY, scroll: wrap.scrollLeft };
+  };
+  const onTouchMove = (event) => {
+    if (!gesture.current || event.touches.length !== 1) return;
+    const wrap = containerRef.current?.querySelector(".ant-tabs-nav-wrap");
+    if (!wrap) return;
+    const dx = event.touches[0].clientX - gesture.current.x;
+    const dy = event.touches[0].clientY - gesture.current.y;
+    if (Math.abs(dx) > Math.abs(dy)) wrap.scrollLeft = gesture.current.scroll - dx;
+  };
+  return (
+    <div ref={containerRef} className="swipe-tabs-container" onTouchStart={onTouchStart} onTouchMove={onTouchMove} onTouchEnd={() => { gesture.current = null; }}>
+      <Tabs {...props}>{children}</Tabs>
+    </div>
+  );
+};
+
 const NavBar = () => {
   const [activeTab, setActiveTab] = useState("1");
 
@@ -86,7 +111,7 @@ const NavBar = () => {
       break;
     case "2":
       content = (
-        <Tabs defaultActiveKey="2-1" centered className="custom-sub-tabs">
+        <SwipeTabs defaultActiveKey="2-1" centered className="custom-sub-tabs">
           <TabPane tab="Estudiantes" key="2-1">
             <Estudiantes />
           </TabPane>
@@ -105,13 +130,13 @@ const NavBar = () => {
           <TabPane tab="Principios" key="2-6">
             <InstitutionalPrinciples />
           </TabPane>
-        </Tabs>
+        </SwipeTabs>
       );
       break;
     case "3":
       content = (
         <div className="government-scroll-area" onWheel={scrollGovernmentTabs}>
-        <Tabs defaultActiveKey="3-1" className="custom-sub-tabs government-sub-tabs">
+        <SwipeTabs defaultActiveKey="3-1" className="custom-sub-tabs government-sub-tabs">
           <TabPane tab="Consejo Directivo" key="3-1">
             <ConsejoDirectivo />
           </TabPane>
@@ -130,13 +155,13 @@ const NavBar = () => {
           <TabPane tab="Asociación de Padres de familia" key="3-6">
             <AsociacionPadres />
           </TabPane>
-        </Tabs>
+        </SwipeTabs>
         </div>
       );
       break;
     case "4":
       content = (
-        <Tabs defaultActiveKey="4-1" centered className="custom-sub-tabs">
+        <SwipeTabs defaultActiveKey="4-1" centered className="custom-sub-tabs">
           <TabPane tab="Consejo Académico" key="4-1">
             <ConsejoAcademico />
           </TabPane>
@@ -146,12 +171,12 @@ const NavBar = () => {
           <TabPane tab="Experiencias Pedagógicas" key="4-3">
             <ExperienciasPedagogicas/>
           </TabPane>
-        </Tabs>
+        </SwipeTabs>
       );
       break;
     case "5":
       content = (
-        <Tabs defaultActiveKey="5-1" centered className="custom-sub-tabs">
+        <SwipeTabs defaultActiveKey="5-1" centered className="custom-sub-tabs">
           <TabPane tab="Dirección" key="5-1">
             {dependenciaGrid(direccionImgs)}
           </TabPane>
@@ -167,7 +192,7 @@ const NavBar = () => {
           <TabPane tab="Psicoorientación" key="5-5">
             {dependenciaGrid(psicoorientacionImgs)}
           </TabPane>
-        </Tabs>
+        </SwipeTabs>
       );
       break;
     case "6":
@@ -178,7 +203,7 @@ const NavBar = () => {
       break;
     case "8":
       content = (
-        <Tabs defaultActiveKey="8-1" centered className="custom-sub-tabs">
+        <SwipeTabs defaultActiveKey="8-1" centered className="custom-sub-tabs">
           <TabPane tab="General" key="8-1">
             <Inscripcion />
           </TabPane>
@@ -191,7 +216,7 @@ const NavBar = () => {
           <TabPane tab="Requisitos" key="8-4">
             <Requerimientos />
           </TabPane>
-        </Tabs>
+        </SwipeTabs>
       );
       break;
     case "9":
@@ -216,7 +241,7 @@ const NavBar = () => {
         <TabPane tab="DEPENDENCIAS" key="5" />
         <TabPane tab="DESCARGAS" key="6" />
         <TabPane tab="CONTÁCTO" key="7" />
-      </Tabs>
+      </SwipeTabs>
       <div className="custom-content">{content}</div>
     </div>
   );
