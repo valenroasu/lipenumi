@@ -19,7 +19,7 @@
         <Divider style={{ backgroundColor: "#295EA5" }} />
         <Footer />
         <Button
-          className="floating-whatsapp floating-whatsapp-principal"
+         
           type="primary"
           icon={!hoveredPrincipal && <WhatsAppOutlined />}
           style={{
@@ -46,7 +46,7 @@
           {hoveredPrincipal ? "Principal" : null}
         </Button>
         <Button
-          className="floating-whatsapp floating-whatsapp-preescolar"
+         
           type="primary"
           icon={!hoveredPreescolar && <WhatsAppOutlined />}
           style={{
@@ -72,7 +72,7 @@
         >
           {hoveredPreescolar ? "Preescolar" : null}
         </Button>
-        <div className="floating-platform" style={{ position: "fixed", bottom: 115, right: 24, width: 167, zIndex: 20 }}>
+        <div style={{ position: "fixed", bottom: 115, right: 24, width: 167, zIndex: 20 }}>
           <h2 style={{
             position: "relative",
             boxSizing: "border-box",
@@ -106,7 +106,7 @@
         </a>
         </div>
         <div>
-        <a href="/horarios" className="floating-hours">
+        <a href="/horarios">
           <img
             src={Horarios}
             alt="Horarios"
@@ -126,7 +126,7 @@
 
         {/* Botón de acceso al panel admin */}
         <Button
-          className="floating-admin"
+         
           type="text"
           icon={<SettingOutlined />}
           style={{
