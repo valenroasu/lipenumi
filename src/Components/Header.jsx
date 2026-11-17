@@ -3,7 +3,7 @@ import logo from "@assets/logo.png";
 
 const Header = () => {
   return (
-    <div className="school-header"
+    <div
       style={{
         display: "flex",
         width: "100%",
@@ -12,7 +12,7 @@ const Header = () => {
         justifyContent: "space-between",
       }}
     >
-      <img className="school-header-logo"
+      <img
         src={logo}
         alt="Lipenumi Logo"
         style={{
@@ -24,7 +24,7 @@ const Header = () => {
           display: window.innerWidth <= 600 ? "none" : "flex",
         }}
       />
-      <div className="school-header-content"
+      <div
         style={{
           width: "85%",
           background:
@@ -36,7 +36,7 @@ const Header = () => {
           alignItems: "center",
         }}
       >
-        <h1 className="school-header-title"
+        <h1
           style={{
             textAlign: "center",
 
@@ -49,7 +49,7 @@ const Header = () => {
           onMouseOver={(e) => (e.currentTarget.style.transform = "scale(1.05)")}
           onMouseOut={(e) => (e.currentTarget.style.transform = "scale(1)")}
         >
-          <a className="school-header-name"
+          <a
             href="/"
             style={{
               textDecoration: "none",
@@ -61,7 +61,7 @@ const Header = () => {
             LICEO PEDAGÓGICO NUEVO MILENIO
           </a>
         </h1>
-        <h4 className="school-header-resolution"
+        <h4
           style={{
             textAlign: "center",
             color: "#fff",
@@ -76,7 +76,7 @@ const Header = () => {
           href="/inscripciones"
           style={{ textDecoration: "none", color: "#fff" }}
         >
-          <h2 className="school-header-enrollment"
+          <h2
             style={{
               textAlign: "center",
               color: "#fff", // Color de relleno del texto
