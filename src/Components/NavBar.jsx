@@ -208,7 +208,6 @@ const NavBar = () => {
         centered
         onChange={onChange}
         className="custom-tabs"
-        tabBarStyle={{ flexWrap: "wrap" }} // Permitir que las pestañas se envuelvan
       >
         <TabPane tab="INICIO" key="1" />
         <TabPane tab="INSTITUCIONAL" key="2" />
