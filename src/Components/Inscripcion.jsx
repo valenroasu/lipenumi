@@ -54,7 +54,7 @@ const Inscripcion = () => {
               width: "fit-content",
             }}
           >
-            INSCRIPCIONES Y MATRÍCULAS 2025
+            INSCRIPCIONES Y MATRÍCULAS 2027
           </h1>
         </div>
         <p
@@ -88,7 +88,7 @@ const Inscripcion = () => {
               CONTAMOS CON CUPOS PARA TODOS LOS NIVELES Y GRADOS OFRECIDOS POR
               EL COLEGIO
             </h2>
-            <img src={img} alt="Inscripción 2025" style={imgStyle} />
+            <img src={img} alt="Inscripciones y matrículas 2027" style={imgStyle} />
           </div>
         </div>
       </div>
@@ -113,7 +113,7 @@ const Inscripcion = () => {
           }}
         >
           <li>
-            <p>Preescolar, Básica y media</p>
+            <p>Preescolar, Básica Primaria, Básica Secundaria y Media</p>
           </li>
           <li>
             <p>Educación personalizada.</p>
