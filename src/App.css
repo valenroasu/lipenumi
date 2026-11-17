@@ -593,3 +593,50 @@ body {
 .historia-intro-card p{font-size:.94rem;line-height:1.75;margin:0;overflow-wrap:break-word}
 .historia-quote-below{width:min(1100px,92%);margin:0 auto 2em;box-sizing:border-box;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.55rem;padding:1.4rem 1.5rem;text-align:center;font-size:clamp(1rem,1.7vw,1.35rem);font-weight:700}
 .historia-quote-below cite{font-size:.8em;font-weight:400;font-style:normal;opacity:.9}
+
+
+/* Barras de pestañas: desplazamiento táctil horizontal real en móviles y tabletas. */
+@media (max-width: 1024px) {
+  .custom-tabs, .custom-sub-tabs { width:100%; min-width:0; }
+  .custom-tabs > .ant-tabs-nav,
+  .custom-sub-tabs > .ant-tabs-nav {
+    width:100%; max-width:100%; min-width:0;
+    overflow:hidden; padding-inline:8px;
+  }
+  .custom-tabs > .ant-tabs-nav .ant-tabs-nav-wrap,
+  .custom-sub-tabs > .ant-tabs-nav .ant-tabs-nav-wrap {
+    display:block!important;
+    flex:1 1 auto!important;
+    min-width:0!important;
+    width:100%!important;
+    overflow-x:auto!important;
+    overflow-y:hidden!important;
+    -webkit-overflow-scrolling:touch;
+    touch-action:pan-x!important;
+    overscroll-behavior-x:contain;
+    scrollbar-width:none;
+  }
+  .custom-tabs > .ant-tabs-nav .ant-tabs-nav-wrap::-webkit-scrollbar,
+  .custom-sub-tabs > .ant-tabs-nav .ant-tabs-nav-wrap::-webkit-scrollbar {display:none}
+  .custom-tabs > .ant-tabs-nav .ant-tabs-nav-list,
+  .custom-sub-tabs > .ant-tabs-nav .ant-tabs-nav-list {
+    display:flex!important;
+    flex:0 0 max-content!important;
+    width:max-content!important;
+    min-width:max-content!important;
+    transform:none!important;
+    flex-wrap:nowrap!important;
+    position:relative;
+  }
+  .custom-tabs > .ant-tabs-nav .ant-tabs-tab,
+  .custom-sub-tabs > .ant-tabs-nav .ant-tabs-tab {
+    flex:0 0 auto!important;
+    white-space:nowrap!important;
+    font-size:14px!important;
+    margin:0 5px!important;
+    padding:10px 12px!important;
+    min-height:44px;
+  }
+  .custom-tabs > .ant-tabs-nav .ant-tabs-nav-operations,
+  .custom-sub-tabs > .ant-tabs-nav .ant-tabs-nav-operations {display:none!important}
+}
