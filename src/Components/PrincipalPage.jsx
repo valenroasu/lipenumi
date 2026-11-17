@@ -36,7 +36,7 @@ const PrincipalPage = () => {
     <div className="oferta-section">
       <div className="oferta-titulo card-white">
         <h2>Conoce nuestra oferta académica</h2>
-        <ul><li>Pre-escolar</li><li>Básica Primaria</li><li>Básica Media</li><li>Bachillerato</li></ul>
+        <ul><li>Preescolar</li><li>Básica Primaria</li><li>Básica Secundaria</li><li>Media</li></ul>
       </div>
       <div className="mini-cards">{infoCards.map((card,i)=><div className="mini-card" key={i}><h4>{card.titulo}</h4><p>{card.texto}</p></div>)}</div>
     </div>
