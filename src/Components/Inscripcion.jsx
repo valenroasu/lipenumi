@@ -36,7 +36,7 @@ const Inscripcion = () => {
   };
 
   return (
-    <div className="enrollment-page" style={cardStyle}>
+    <div style={cardStyle}>
       <div>
         <div
           style={{
@@ -71,7 +71,7 @@ const Inscripcion = () => {
         </p>
       </div>
 
-      <div className="enrollment-feature" style={styleContent}>
+      <div style={styleContent}>
         <div style={{ margin: "20px" }}>
           <div
             style={{
@@ -92,7 +92,7 @@ const Inscripcion = () => {
           </div>
         </div>
       </div>
-      <div className="enrollment-services" style={styleContent2}>
+      <div style={styleContent2}>
         <h2
           style={{
             justifyContent: "start",
